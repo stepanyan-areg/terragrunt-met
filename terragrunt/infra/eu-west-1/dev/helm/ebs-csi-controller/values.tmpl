@@ -1,0 +1,17 @@
+controller:
+  region: ${region}
+  serviceAccount:
+    create: true
+    name: ebs-csi-controller-sa
+    annotations:
+      eks.amazonaws.com/role-arn: ${role_arn}
+storageClasses:
+- name: ebs-sc
+  annotations:
+    storageclass.kubernetes.io/is-default-class: "false"
+  volumeBindingMode: WaitForFirstConsumer
+  reclaimPolicy: Delete
+  parameters:
+    encrypted: "true"
+node:
+  tolerateAllTaints: true
