@@ -20,8 +20,9 @@ dependency "irsa_csi" {
 }
 
 terraform {
-  source = "../../../../../terraform/modules/k8s/helm///"
+  source = "git::ssh://git@github.com/stepanyan-areg/terraform-met.git//infra/terraform/modules/k8s/helm?ref=main"
 }
+
 
 inputs = {
   // kubeconfig = dependency.eks.outputs.kubeconfig_filename

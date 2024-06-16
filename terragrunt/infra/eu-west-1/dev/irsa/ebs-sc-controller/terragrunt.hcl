@@ -14,8 +14,9 @@ dependency "eks" {
 }
 
 terraform {
-  source = "../../../../../terraform/modules/aws/irsa///"
+  source = "git::ssh://git@github.com/stepanyan-areg/terraform-met.git//infra/terraform/modules/aws/irsa?ref=main"
 }
+
 
 inputs = {
   cluster_id = dependency.eks.outputs.eks_cluster_name

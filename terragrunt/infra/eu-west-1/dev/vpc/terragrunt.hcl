@@ -9,7 +9,7 @@ locals {
 }
 
 terraform {
-  source = "../../../../terraform/modules/aws/vpc"
+  source = "git::ssh://git@github.com/stepanyan-areg/terraform-met.git//infra/terraform/modules/aws/vpc?ref=main"
 }
 
 inputs = {
